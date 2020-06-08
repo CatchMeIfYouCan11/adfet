@@ -1,0 +1,161 @@
+1. type_of() : It is defined to get the type of any data-type whether it is int/char/int*...
+
+	       Note : In this 1D array is denoted by int*.
+
+  Example input : 	int *a = {1,2,32,3,2,23,9,3,2};
+
+			printf("%s",type_of(a));
+
+  Example output :	int*
+
+  Format : type_of(data_type)
+
+2. len() : As we know we already have the strlen() to find the length of the string but strlen() works only for strings.
+	   This len() will works for both integer array as well as character array. (Note: len() will works for onle 1d arrays)
+
+  Example input : 	int a[] = {1,2,32,3,2,23,9,3,2};
+
+			printf("%d",len(a));
+
+  Example output :	9
+
+  Example input : 	int s[] = "hello hi";
+
+			printf("%s",len(s));
+
+  Example output :	8
+
+  Format : len(array)
+
+
+3. print() : For printing arrays we usually have to use loops again and again so to simplify that here this print function is
+	     introduced to print both integer as well as char arrays.
+
+   Example input : 	int a[] = {1,2,32,3,2,23,9,3,2};
+
+			print(a,len(a));
+
+   Example output :	12323223932
+
+	
+   Example input : 	int a[] = {1,2,32,3,2,23,9,3,2};
+
+			print(a,len(a),' ');
+
+   Example output :	1 2 32 3 2 23 9 3 2
+
+
+   Example input : 	int a[] = {1,2,32,3,2,23,9,3,2};
+
+			print(a,len(a),':');
+
+   Example output :	1:2:32:3:2:23:9:3:2
+
+   Format : print(array ,size, separating_char)
+	    
+	    Note : separating_char is optional.
+
+
+
+
+4. replace() : For replacing a char in a string.
+
+
+   Example input : 	int s[] = "hello";
+		
+			replace(s,'l','#')
+
+			print(s,len(s));
+
+   Example output :	he##o
+
+	
+   Example input : 	int s[] = "hello";
+
+			replace(s,'l','#',1)
+
+			print(s,len(s));
+
+
+   Example output :	he#lo
+
+
+   Format : replace(string , old_char ,new_char , no of char to be replaced)
+	    
+	    Note : no of char to be replaced is optional but if not mentioned all characters will be replaced.
+
+5. slice = It is used to get a part of any array. Basically if you want to slice your array and pass to 
+           another array then this can be used.
+
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+      int *p;
+
+			p = slice(a,3,7);
+
+      print(p,7-3,' ');
+
+  Example output : 3 2 23 9
+
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+      int *p;
+
+			p = slice(a,0,7,2);
+
+      print(p,(7-0+1)/2,' ');                          // here i did (7-0+1) is divided by 2 as the step is 2 and 1 is added as 7 is odd.
+
+  Example output : 1 32 2 9 
+
+  Format : slice(array, initial_index, final_index, step)
+
+  Note : Step argument is optional
+
+
+6. sort() : It is defined to sort integer array as well as char array in both ascending and descending orders.
+	    Here the fastest sorting algorithm is used to make the sorting process much faster.
+	
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+			sort(a,len(a));
+	
+			print(a,len(a),' ');
+  
+  Example output : 1 2 2 2 3 3 9 23 32 (ascending ; sorted array)
+
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+			sort(a,len(a),-1);
+	
+			print(a,len(a),' ');
+  
+  Example output : 32 23 9 3 3 2 2 2 1 (descending ; sorted array)
+
+  Format : sort(array, size, num)
+
+  Note : If you want to arrange in descending order then put num = -1 otherwise leave it.
+
+7. compare() : It is used to compare to arrays (can be used for both integer as well as character array). Its also tells your the point of dis-similarity.
+
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+                  int *b = {1,2,3,3,2,23,9,3,2}
+
+			printf("%d\n",compare(a,len(a),b,len(b)));
+
+  Example output : 0
+
+  Example input :	int *a = {1,2,32,3,2,23,9,3,2};
+
+                  int *b = {1,2,3,3,2,23,9,3,2}
+
+			printf("%d\n",compare(a,len(a),b,len(b),1));
+
+  Example output : Element 2 is not same.
+                   0
+
+  Format : compare(array_1, size_of_array_1,array_2, size_of_array_2, num)
+
+  
+  Note : If you want to know the point of dis-similarity put num = 1 else leave it.
+   

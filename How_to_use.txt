@@ -1,0 +1,5 @@
+Just paste it inside the include folder where other libraries are present.
+
+If you have CodeBlocks.
+
+CodeBlocks/MinGW/include
